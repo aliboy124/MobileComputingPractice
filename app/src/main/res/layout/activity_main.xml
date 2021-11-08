@@ -59,6 +59,7 @@
                 android:layout_marginTop="37dp"
                 android:layout_marginEnd="84dp"
                 android:drawableBottom="@drawable/ic_baseline_account_balance_24"
+                android:onClick="CallingIntent"
                 android:text="Button" />
 
             <ImageView
