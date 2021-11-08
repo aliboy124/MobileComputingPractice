@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         String shareBody = "Here is the share content body";
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        if(sharingIntent.resolveActivity(getPackageManager()) != null){
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
     }
 
     public void NewActivity(View view){
