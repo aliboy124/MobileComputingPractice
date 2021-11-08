@@ -20,4 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_DIAL,uri);
         startActivity(intent);
     }
+
+    public void NewActivity(View view){
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("sample text","HELOOO THIS IS SENT FROM MAIN ACITIVTY");
+        startActivity(intent);
+    }
 }
