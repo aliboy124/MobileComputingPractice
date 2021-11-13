@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = new Toast(getApplicationContext());
         toast.setView(myView);
         toast.setDuration(Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
     }
 
