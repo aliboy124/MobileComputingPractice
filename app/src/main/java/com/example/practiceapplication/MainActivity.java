@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         View myView = layoutInflater.inflate(R.layout.my_layout,(ViewGroup)findViewById(R.id.toastBase) );
         Toast toast = new Toast(getApplicationContext());
         toast.setView(myView);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
     }
