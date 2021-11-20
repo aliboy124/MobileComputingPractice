@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("sample text","HELOOO THIS IS SENT FROM MAIN ACITIVTY");
         startActivity(intent);
     }
+    public void GotoActivity3(View view){
+        Intent intent = new Intent(getApplicationContext(),MainActivity3.class);
+        startActivity(intent);
+    }
 }
