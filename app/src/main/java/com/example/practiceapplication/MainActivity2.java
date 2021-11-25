@@ -51,4 +51,15 @@ public class MainActivity2 extends AppCompatActivity {
 //        AlertDialog dialog = builder.create();
 //        dialog.show();
     }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("value",getIntent().getStringExtra("sample text"));
+    }
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView txt = (TextView) findViewById(R.id.textView2);
+        txt.setText(savedInstanceState.getString("value"));
+    }
 }
