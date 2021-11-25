@@ -89,7 +89,7 @@
                 android:rotation="-21"
                 android:rotationX="-4"
                 android:rotationY="37"
-                android:text="Button" />
+                android:text="WHATSAPP" />
         </LinearLayout>
     </ScrollView>
 

@@ -3,6 +3,7 @@ package com.example.practiceapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import java.net.URLEncoder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void GotoActivity3(View view){
-        Intent intent = new Intent(getApplicationContext(),MainActivity3.class);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.setPackage("com.whatsapp");
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT,"My Message");
         startActivity(intent);
     }
 }
