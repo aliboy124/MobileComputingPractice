@@ -47,11 +47,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void GotoActivity3(View view){
+//        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_SEND);
+//        intent.setPackage("com.whatsapp");
+//        intent.setType("text/plain");
+//        intent.putExtra(Intent.EXTRA_TEXT,"My Message");
+//        startActivity(intent);
+
+
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
-        intent.setPackage("com.whatsapp");
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,"My Message");
-        startActivity(intent);
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"bsef18a519@pucit.edu.pk"});
+        intent.putExtra(Intent.EXTRA_SUBJECT,"SENT from android app");
+        intent.putExtra(Intent.EXTRA_TEXT,"This text is sent from app for flexing purposes.");
+        if (intent.resolveActivity(getPackageManager())!=null)
+            startActivity(intent);
     }
 }
