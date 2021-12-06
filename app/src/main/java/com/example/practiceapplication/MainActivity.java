@@ -1,6 +1,7 @@
 package com.example.practiceapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,13 +9,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+//import android.widget.Toolbar;
 
 import java.net.URLEncoder;
 
 public class MainActivity extends AppCompatActivity {
+
+    Toolbar toolbar;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +33,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         LayoutInflater layoutInflater = getLayoutInflater();
-        View myView = layoutInflater.inflate(R.layout.my_layout,(ViewGroup)findViewById(R.id.toastBase) );
+        View myView = layoutInflater.inflate(R.layout.my_layout,null );
         Toast toast = new Toast(getApplicationContext());
         toast.setView(myView);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     public void CallingIntent(View view){
@@ -42,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void NewActivity(View view){
-        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-        intent.putExtra("sample text","HELOOO THIS IS SENT FROM MAIN ACITIVTY");
+        Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+        //intent.putExtra("sample text","HELOOO THIS IS SENT FROM MAIN ACITIVTY");
         startActivity(intent);
     }
     public void GotoActivity3(View view){
